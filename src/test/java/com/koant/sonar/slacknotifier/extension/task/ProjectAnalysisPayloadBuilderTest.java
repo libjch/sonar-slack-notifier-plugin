@@ -55,7 +55,7 @@ public class ProjectAnalysisPayloadBuilderTest {
         Payload payload = ProjectAnalysisPayloadBuilder.of(postProjectAnalysisTask.getProjectAnalysis())
                 .projectConfig(projectConfig)
                 .i18n(i18n)
-                .projectUrl("http://localhist:9000/overview?id=project:key")
+                .projectUrl("http://localhist:9000/dashboard?id=project:key")
                 .username("CKSSlackNotifier")
                 .build();
         assertThat(payload).isEqualTo(expected());
@@ -90,7 +90,7 @@ public class ProjectAnalysisPayloadBuilderTest {
                 .color("good")
                 .build());
         return Payload.builder()
-                .text("Project [Project Name] analyzed. See http://localhist:9000/overview?id=project:key. Quality gate status: OK")
+                .text("Project [Project Name] analyzed. See http://localhist:9000/dashboard?id=project:key. Quality gate status: OK")
                 .channel("#channel")
                 .username("CKSSlackNotifier")
                 .attachments(attachments)
@@ -104,7 +104,7 @@ public class ProjectAnalysisPayloadBuilderTest {
         Payload payload = ProjectAnalysisPayloadBuilder.of(postProjectAnalysisTask.getProjectAnalysis())
                 .projectConfig(projectConfig)
                 .i18n(i18n)
-                .projectUrl("http://localhist:9000/overview?id=project:key")
+                .projectUrl("http://localhist:9000/dashboard?id=project:key")
                 .username("CKSSlackNotifier")
                 .build();
 
@@ -123,7 +123,7 @@ public class ProjectAnalysisPayloadBuilderTest {
         Payload payload = ProjectAnalysisPayloadBuilder.of(postProjectAnalysisTask.getProjectAnalysis())
                 .projectConfig(projectConfig)
                 .i18n(i18n)
-                .projectUrl("http://localhist:9000/overview?id=project:key")
+                .projectUrl("http://localhist:9000/dashboard?id=project:key")
                 .username("CKSSlackNotifier")
                 .build();
 

@@ -12,8 +12,12 @@ import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 
 import java.text.DecimalFormat;
-import java.text.NumberFormat;
-import java.util.*;
+import java.text.DecimalFormatSymbols;
+import java.util.ArrayList;
+import java.util.EnumMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
@@ -48,6 +52,7 @@ public class ProjectAnalysisPayloadBuilder {
         // Format percentages as 25.01 instead of 25.0066666666666667 etc.
         this.percentageFormat = new DecimalFormat();
         this.percentageFormat.setMaximumFractionDigits(2);
+        this.percentageFormat.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.ENGLISH));
     }
 
     public static ProjectAnalysisPayloadBuilder of(PostProjectAnalysisTask.ProjectAnalysis analysis) {
